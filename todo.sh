@@ -10,7 +10,7 @@
 set -eu
 
 TODO_AUTO_SYNC=${TODO_AUTO_SYNC:-"false"}
-TODO_ROOT=${TODO_ROOT:-"~/.todo"}
+TODO_ROOT=${TODO_ROOT:-"$HOME/.todo"}
 EDTIOR=${EDITOR:-vim}
 
 # Create the git repo, if needed.
