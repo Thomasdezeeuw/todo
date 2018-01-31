@@ -55,7 +55,8 @@ The root directory which contains all todo lists, defaults to "~/.todo".
 $TODO_AUTO_SYNC
 ```
 
-Whether or not to automatically call `sync` after `open` , defaults to false.
+If this is set to `true`, or `1`, todo will call `sync` after each `open` call,
+defaults to false.
 
 ## License
 
