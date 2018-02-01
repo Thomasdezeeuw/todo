@@ -2,6 +2,7 @@
 
 A simple todo list keeper, with the help of git.
 
+
 ## Commands
 
 `todo` has the following commands.
@@ -35,6 +36,7 @@ $ todo sync
 
 Calls git push on the todo repo. Requires a remote to be setup manually.
 
+
 ## Environment variables
 
 The following environment variables changes the behaviour of `todo`.
@@ -57,6 +59,7 @@ $TODO_AUTO_SYNC
 
 If this is set to `true`, or `1`, todo will call `sync` after each `open` call,
 defaults to false.
+
 
 ## License
 
