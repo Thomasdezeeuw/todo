@@ -36,6 +36,12 @@ $ todo sync
 
 Calls git push on the todo repo. Requires a remote to be setup manually.
 
+```
+$ todo ls
+```
+
+List all todo lists. Effectively calling `ls` in the todo directory.
+
 
 ## Environment variables
 

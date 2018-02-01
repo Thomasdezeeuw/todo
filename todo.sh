@@ -76,6 +76,9 @@ case $arg_1 in
 list)
 	cat "$TODO_ROOT/$(list_file_path ${2:-})"
 	;;
+ls)
+	ls -1 "$TODO_ROOT" | sed 's/.TODO//g'
+	;;
 sync)
 	sync
 	;;
