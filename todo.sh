@@ -31,9 +31,14 @@ list_file_path() {
 	fi
 }
 
+list_file_full_path() {
+	LIST_FILE_PATH=$(list_file_path "${1:-}")
+	echo "$TODO_ROOT/$LIST_FILE_PATH"
+}
+
 open() {
-	LIST_FILE_PATH=$(list_file_path ${1:-})
-	LIST_FILE_FULL_PATH="$TODO_ROOT/$(list_file_path ${1:-})"
+	LIST_FILE_PATH=$(list_file_path "${1:-}")
+	LIST_FILE_FULL_PATH=$(list_file_full_path "${1:-}")
 
 	# Setup a skeleton if the file doesn't exists.
 	if [[ ! -f "$LIST_FILE_FULL_PATH" ]]; then
@@ -74,7 +79,7 @@ arg_1=${1:-}
 
 case "$arg_1" in
 list)
-	cat "$TODO_ROOT/$(list_file_path ${2:-})"
+	cat $(list_file_full_path "${2:-}")
 	;;
 ls)
 	ls -1 "$TODO_ROOT" | sed 's/.TODO//g'
