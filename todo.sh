@@ -24,7 +24,7 @@ setup() {
 # Determine the list file based on an optional argument.
 list_file_path() {
 	# Either the global "TODO" file or "$name.TODO" file.
-	if [ -z ${1+x} ]; then
+	if [[ -z "${1:-}" ]]; then
 		echo "TODO"
 	else
 		echo "$1.TODO"
@@ -42,7 +42,7 @@ open() {
 
 	# Setup a skeleton if the file doesn't exists.
 	if [[ ! -f "$LIST_FILE_FULL_PATH" ]]; then
-		if [ -z ${1+x} ]; then
+		if [[ -z ${1+x} ]]; then
 			printf "# TODO \n\n\n" > "$LIST_FILE_FULL_PATH"
 		else
 			printf "# TODO $1\n\n\n" > "$LIST_FILE_FULL_PATH"
