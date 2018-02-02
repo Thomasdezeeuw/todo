@@ -54,8 +54,8 @@ open() {
 	fi
 
 	# Commit the changes.
-	# TODO: improve commit message
-	(cd "$TODO_ROOT" && git commit --quiet --all --message="Update todo list" 1>/dev/null || true)
+	COMMIT_MSG="Update ${1:-global} todo list"
+	(cd "$TODO_ROOT" && git commit --quiet --all --message="$COMMIT_MSG" 1>/dev/null || true)
 
 	# Automatically sync the todo, if that is required.
 	if [[ "$TODO_AUTO_SYNC" == "true" || "$TODO_AUTO_SYNC" == "1" ]]; then
