@@ -72,7 +72,7 @@ setup
 
 arg_1=${1:-}
 
-case $arg_1 in
+case "$arg_1" in
 list)
 	cat "$TODO_ROOT/$(list_file_path ${2:-})"
 	;;
@@ -83,6 +83,6 @@ sync)
 	sync
 	;;
 *)
-	open $arg_1
+	open "$arg_1"
 	;;
 esac
