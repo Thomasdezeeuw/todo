@@ -87,6 +87,25 @@ ls)
 sync)
 	sync
 	;;
+--help)
+	echo "Usage:
+todo [options] command [list]
+
+	--help            Show this help message.
+
+COMMANDS
+
+	open              Open a todo list for editing.
+	list              Print the todo list.
+	ls                Print all lists.
+	sync              Sync all lists.
+
+ENVIRONMENT VARIABLES
+
+	\$EDITOR          The editor with which to edit lists, defaults to vim.
+	\$TODO_ROOT       The root directory which contains all todo lists, defaults to '~/.todo'.
+	\$TODO_AUTO_SYNC  If this is set to 'true', or '1', todo will sync after each edit, defaults to false."
+	;;
 open)
 	open "${2:-}"
 	;;
