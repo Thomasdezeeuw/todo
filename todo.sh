@@ -87,6 +87,9 @@ ls)
 sync)
 	sync
 	;;
+open)
+	open "${2:-}"
+	;;
 *)
 	open "$arg_1"
 	;;
